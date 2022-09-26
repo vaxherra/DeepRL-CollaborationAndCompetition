@@ -18,7 +18,7 @@ def _get_actions(states, add_noise, agent_0, agent_1):
     return np.concatenate((action_0, action_1), axis=0).flatten()
 
 
-def maddpg(env, brain_name, agent_0, agent_1, n_episodes=2000, max_t=1000, train_mode=True, print_every=10, EPISODES=100,
+def maddpg(env, brain_name, agent_0, agent_1, n_episodes=2000, train_mode=True, print_every=10, EPISODES=100,
            ADD_NOISE: bool = True, target_score=0.5):
     """Multi-Agent Deep Deterministic Policy Gradient (MADDPG)
 
