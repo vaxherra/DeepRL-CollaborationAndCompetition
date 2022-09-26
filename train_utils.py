@@ -48,7 +48,7 @@ def maddpg(env, brain_name, agent_0, agent_1, n_episodes=2000, max_t=1000, train
         agent_1.reset()
         scores = np.zeros(num_agents)
         while True:
-            actions = _get_actions(states, ADD_NOISE)  # choose agent actions
+            actions = _get_actions(states, ADD_NOISE, agent_0, agent_1)  # choose agent actions
             env_info = env.step(actions)[brain_name]  # send agents' actions to the environment
             next_states = np.reshape(env_info.vector_observations, (1, 48))  # get agents' next states
             rewards = env_info.rewards  # get rewards
